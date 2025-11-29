@@ -1,0 +1,15 @@
+{
+  "manifest_version": 3,
+  "name": "Twitter/X: Seni Takip Etmeyenler",
+  "version": "1.0",
+  "description": "Takip ettikleriniz arasında sizi takip etmeyenleri filtreler.",
+  "permissions": ["activeTab", "scripting"],
+  "host_permissions": ["https://x.com/*", "https://twitter.com/*"],
+  "content_scripts": [
+    {
+      "matches": ["https://x.com/*/following", "https://twitter.com/*/following"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
